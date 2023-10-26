@@ -28,7 +28,7 @@ function App() {
 
   useEffect(() => {
     async function getTabs() {
-      const res = await fetch("/tabs.json");
+      const res = await fetch(process.env.REACT_APP_BASE_URL + "/tabs.json");
       const data = (await res.json()) as Tab[];
       sortTabs(data);
       setTabs(data);
